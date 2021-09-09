@@ -10,19 +10,19 @@ const getAll = async (req, res) => {
 };
 
 const getById = async (req, res) => {
-  const { id } = req.params.id;
-
-  try {
-    const personagem = await Personagem.findById(id);
-    if (!personagem) {
-      res.status(404).send({ message: "personagem não encontrado" });
-      return;
+    const { id } = req.params;
+  
+    try {
+      const personagem = await Personagem.findById(id);
+      if (!personagem) {
+        res.status(404).json({ message: "Personagem não encontrado" });
+        return;
+      }
+      return res.send({ personagem });
+    } catch (err) {
+      res.status(500).send({ error: err });
     }
-    return res.status({ personagem });
-  } catch (err) {
-    res.status(500).send({ error: err });
-  }
-};
+  };
 
 const create = async (req, res) => {
   const { nome, identidade, genero, imagem } = req.body;
