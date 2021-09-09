@@ -12,7 +12,7 @@ routes.get(
 );
 routes.post("/personagens", PersonagemController.create);
 routes.put(
-  "/personagens",
+  "/personagens/:id",
   PersonagemMiddleware.validaId,
   PersonagemController.update
 );
