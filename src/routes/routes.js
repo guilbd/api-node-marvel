@@ -17,7 +17,7 @@ routes.put(
   PersonagemController.update
 );
 routes.delete(
-  "/personagens",
+  "/personagens/:id",
   PersonagemMiddleware.validaId,
   PersonagemController.del
 );
