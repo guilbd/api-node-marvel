@@ -1,10 +1,12 @@
 const express = require('express');
 const routes = express.Router();
 
-const PersonagemController = require('../controllers/PersonagensController');
-const PersonagemMiddlewares = require('../middlewares/PersonagensMiddlewares');
+const PersonagemController = require("../controllers/PersonagensController");
+const PersonagemMiddleware = require("../middlewares/PersonagemMiddlewares");
 
-routes.get("/personagens", PersonagensController, getAll);
-routes.get("/personagens/:id", PersonagensMiddlewares.validaId, PersonagensController.getById);
+routes.get("/personagens", PersonagemController.getAll);
+routes.get("/personagens/:id", PersonagemMiddleware.validaId, PersonagemController.getById);
+routes.post("/personagens", PersonagemController.create)
 
-module.exports = routes;
+
+module.exports = routes
