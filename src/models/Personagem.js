@@ -13,7 +13,7 @@ const personagemSchema = new mongoose.Schema({
         type: 'string',
         require: true
     },
-    iamgem:{
+    imagem:{
         type: 'string',
         require: true
     },
