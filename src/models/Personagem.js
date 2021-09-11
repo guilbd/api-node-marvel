@@ -2,21 +2,21 @@ const mongoose = require('mongoose');
 
 const personagemSchema = new mongoose.Schema({
     nome:{
-        type: 'string',
+        type: String,
         require: true
     },
     identidade:{
-        type: 'string',
+        type: String,
         require: true
     },
     genero:{
-        type: 'string',
+        type: String,
         require: true
     },
     imagem:{
-        type: 'string',
+        type: String,
         require: true
-    },
+    }
 })
 
 module.exports = mongoose.model("Personagem", personagemSchema)
